@@ -16,7 +16,7 @@ def chooseProject():
         print(f"Project doesn't exist!")
         return
     elif selectedProject != "z":
-        print(f"Arrancando -{selectedProject} ...")
+        print(f"Starting -{selectedProject} ...")
         try:
             subprocess.Popen(["make", "all_remove"], cwd = projecstMap["z"])
             subprocess.Popen(["make", "start"], cwd = os.path.expanduser("~/development/x/"))
@@ -26,7 +26,7 @@ def chooseProject():
             print(f"{e}")
     else:
         try:
-            print(f"Arrancando -{selectedProject}")
+            print(f"Starting -{selectedProject}")
             subprocess.Popen(["make", "stop"], cwd = os.path.expanduser("~/development/x/"))
             subprocess.Popen(["make", "all"], cwd = projecstMap["z"])
         except Exception as e:
